@@ -71,6 +71,7 @@ class TestApplicationRules(unittest.TestCase):
     def test_to_azure_ubuntu_repo(self):
         """
         Special HTTP/HTTPS website is reachable from Internet.
+        azure.archive.ubuntu.com only support HTTP, not HTTPS.
         """
         azure_ubuntu_repo = self.host.addr("azure.archive.ubuntu.com")
         self.assertFalse(azure_ubuntu_repo.is_reachable) # Equal to "ping -W 1 -c 1 azure.archive.ubuntu.com"
