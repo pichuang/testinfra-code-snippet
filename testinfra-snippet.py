@@ -96,8 +96,7 @@ class TestApplicationRules(unittest.TestCase):
 
     def test_to_non_reachable_http(self):
         """
-        Special HTTP/HTTPS website is reachable from Internet.
-        azure.archive.ubuntu.com only support HTTP, not HTTPS.
+        Behavior of non reachable HTTP/HTTPS website
         """
         non_reachable_http = self.host.addr("none.pichuang.com.tw")
         self.assertFalse(non_reachable_http.is_reachable) # Equal to "ping -W 1 -c 1 none.pichuang.com.tw"
